@@ -5,12 +5,35 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <title>TODO supply a title</title>
+    <head>  
+       <script>
+            let n=4;
+            function generet(){
+                for(let i=0; i<n; i++){
+                        let divs=document.createElement("DIV"); divs.setAttribute("class","rinda");
+                    for(let j=0; j<n; j++){
+                        let poga=document.createElement("INPUT"); poga.value=""; poga.type="button";
+                        divs.appendChild(poga);
+                        poga.onclick=()=>{
+                            poga.value="kuku";
+                        }
+                    }
+                document.getElementById("forma").appendChild(divs);
+                console.log(document.getElementById("forma").childElementCount);
+            }
+                
+            }
+        </script>
+         <link rel="stylesheet" href="css/stils.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>Tjjjt</div>
+        <div class="container-fluid bg-1 text-center">
+            <h3>ATMIŅAS SPĒLE</h3>
+        </div>
+        <button onclick="generet()">Ģenerēt laukumu</button>
+        <form id="forma"></form>
+       
     </body>
 </html>
