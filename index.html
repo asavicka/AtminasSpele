@@ -9,20 +9,33 @@ and open the template in the editor.
        <script>
             let n=4;
             function generet(){
+                let divs=document.createElement("DIV1");
                 for(let i=0; i<n; i++){
                         let divs=document.createElement("DIV"); divs.setAttribute("class","rinda");
                     for(let j=0; j<n; j++){
-                        let poga=document.createElement("INPUT"); poga.value=""; poga.type="button";
+                        let poga=document.createElement("IMG"); poga.src=jauns[i*n+j];
                         divs.appendChild(poga);
                         poga.onclick=()=>{
-                            poga.value="kuku";
+                            let pogas=poga.getValue();
+                            var res=pogas.substr(7,5);
                         }
                     }
                 document.getElementById("forma").appendChild(divs);
                 console.log(document.getElementById("forma").childElementCount);
             }
-                
-            }
+            }        
+            var pir= ["images/b0.jpeg", "images/b1.jpg ", "images/b2.jpeg", "images/b3.jpg ", "images/b4.jpg ", "images/b5.jpeg", "images/b6.png ", "images/b7.jpg ", "images/b8.jpg ", "images/b9.png "];
+            var atb= ["images/a0.jpg ", "images/a1.jpg ", "images/a2.jpg ", "images/a3.png ", "images/a4.jpg ", "images/a5.jpg ", "images/a6.png ", "images/a7.png ", "images/a8.png ", "images/a9.jpg "];
+                var jauns=[];
+            for(let i=0; i<n*n/2; i++){
+                    jauns.push(pir[i]);
+                    jauns.push(atb[i]);
+                }
+               
+                 var removed=jauns.splice(Math.floor(Math.random()*n*n-1),1);
+                 jauns.push(removed);
+                 
+                 
         </script>
          <link rel="stylesheet" href="css/stils.css">
         <meta charset="UTF-8">
@@ -34,6 +47,5 @@ and open the template in the editor.
         </div>
         <button onclick="generet()">Ģenerēt laukumu</button>
         <form id="forma"></form>
-       
     </body>
 </html>
